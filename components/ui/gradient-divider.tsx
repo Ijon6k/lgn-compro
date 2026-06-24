@@ -1,12 +1,11 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 
-interface GradientDividerProps {
-  className?: string;
+interface GradientDividerProps extends React.HTMLAttributes<HTMLDivElement> {
   height?: "sm" | "md" | "lg";
 }
 
-export function GradientDivider({ className, height = "md" }: GradientDividerProps) {
+export function GradientDivider({ className, height = "md", ...props }: GradientDividerProps) {
   const heights = {
     sm: "h-[6px]",
     md: "h-[8px]",
@@ -21,6 +20,7 @@ export function GradientDivider({ className, height = "md" }: GradientDividerPro
         className
       )}
       role="separator"
+      {...props}
     />
   );
 }

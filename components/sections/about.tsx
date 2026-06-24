@@ -1,15 +1,22 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 export function About() {
+  const { ref, isRevealed } = useScrollReveal(0.05);
+
   return (
-    <section id="about" className="py-24 lg:py-32 bg-bg-surface overflow-hidden">
+    <section ref={ref} id="about" className="py-24 lg:py-32 bg-bg-surface overflow-hidden">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
           {/* IMAGE SIDE */}
-          <div className="lg:col-span-5 relative ml-6 mb-6">
+          <div className={`lg:col-span-5 relative ml-6 mb-6 transition-all duration-1000 ease-out transform ${
+            isRevealed ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+          }`}>
             {/* Decorative Offset Background Layer (Light Beige) */}
             <div className="absolute top-6 -left-6 w-full h-full bg-bg-accent z-0" />
 
@@ -26,14 +33,16 @@ export function About() {
           </div>
 
           {/* CONTENT SIDE */}
-          <div className="lg:col-span-7 flex flex-col gap-8 lg:gap-10">
+          <div className={`lg:col-span-7 flex flex-col gap-8 lg:gap-10 transition-all duration-1000 ease-out transform delay-200 ${
+            isRevealed ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}>
             <div className="flex flex-col gap-4">
               <h2 className="text-xl sm:text-2xl lg:text-4xl font-normal tracking-tight text-text-primary uppercase leading-[1.5]">
                 Bridging Global Innovation With Operational Excellence
               </h2>
             </div>
 
-            <div className="flex flex-col gap-6 text-lg sm:text-2xl font-regular text-[#414244] leading-[1.5]">
+            <div className="flex flex-col gap-6 text-lg sm:text-2xl font-regular text-text-secondary leading-[1.5]">
               <p>
                 LGN delivers integrated autonomous systems, robotics, AI, and
                 mission-critical engineering solutions for government and

@@ -12,18 +12,18 @@ export function Hero() {
       {/* Background Image with Dark Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/photos/Home.webp"
+          src="/photos/homehero2.webp"
           alt="LGN autonomous drone operations"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center scale-105 animate-subtle-zoom"
+          className="object-cover object-center"
         />
 
       </div>
 
       <Container className="relative z-10 mt-24 lg:mt-40">
-        <div className="max-w-[789px] flex flex-col items-start gap-6 lg:gap-8">
+        <div className="max-w-[789px] flex flex-col items-start gap-3">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-normal leading-[1.25] text-white tracking-tight uppercase animate-fade-in-up-1">
             Engineering Mission-Ready
             <br />
@@ -34,10 +34,10 @@ export function Hero() {
             for government and industrial operations.
           </p>
           <div className="animate-fade-in-up-3">
-            <Button 
-              href="#about" 
-              variant="primary" 
-              size="lg" 
+            <Button
+              href="#about"
+              variant="primary"
+              size="lg"
               icon={<i className="fi fi-rr-info flex items-center justify-center"></i>}
             >
               Learn Our Solutions

@@ -19,6 +19,6 @@ export const capabilitiesData: CapabilityItem[] = [
   {
     id: "04",
     title: "MISSION READY",
-    description: "Operational expertise driving measurable impact",
+    description: "Ready to support complex operational needs",
   },
 ];

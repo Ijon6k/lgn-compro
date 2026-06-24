@@ -36,9 +36,9 @@ export function Navbar() {
     >
       <Container className="flex items-center justify-between">
         {/* LOGO */}
-        <Link href="#home" className="flex items-center group focus-visible:outline-none">
+        <Link href="/#home" className="flex items-center group focus-visible:outline-none">
           <img
-            src="/logo/logolgn.svg"
+            src="/logo/logolgn.webp"
             alt="LGN Logo"
             className="h-10 w-auto scale-[2.8] origin-left transition-transform duration-300 group-hover:scale-[2.9]"
           />
@@ -47,7 +47,7 @@ export function Navbar() {
         {/* DESKTOP NAVIGATION */}
         <nav className="hidden lg:flex items-center gap-1">
           {navigationLinks.map((link) => {
-            const hasChildren = link.children && link.children.length > 0;
+            const hasChildren = false; // Temporarily disabled dropdown (originally: link.children && link.children.length > 0)
             return (
               <div
                 key={link.label}
@@ -55,7 +55,7 @@ export function Navbar() {
                 onMouseEnter={() => hasChildren && setActiveDropdown(link.label)}
                 onMouseLeave={() => hasChildren && setActiveDropdown(null)}
               >
-                <a
+                <Link
                   href={link.href}
                   className={cn(
                     "flex items-center gap-1.5 px-4 py-2 text-base font-medium text-black rounded-full hover:bg-bg-subtle transition-all duration-200",
@@ -80,27 +80,29 @@ export function Navbar() {
                       />
                     </svg>
                   )}
-                </a>
+                </Link>
 
-                {/* Dropdown Menu */}
+                {/* Dropdown Menu - padded wrapper to eliminate hover gap */}
                 {hasChildren && (
                   <div
                     className={cn(
-                      "absolute top-full left-1/2 -translate-x-1/2 mt-1 w-56 rounded-xl bg-bg-surface border border-border-default shadow-lg p-2 transition-all duration-300 origin-top transform z-dropdown",
+                      "absolute top-full left-1/2 -translate-x-1/2 pt-2.5 w-56 transition-all duration-300 origin-top transform z-dropdown",
                       activeDropdown === link.label
                         ? "opacity-100 scale-100 translate-y-0"
                         : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
                     )}
                   >
-                    {link.children?.map((subLink) => (
-                      <a
-                        key={subLink.label}
-                        href={subLink.href}
-                        className="block px-4 py-2.5 text-sm font-medium text-black/80 rounded-lg hover:bg-bg-subtle hover:text-black transition-all duration-150"
-                      >
-                        {subLink.label}
-                      </a>
-                    ))}
+                    <div className="rounded-xl bg-bg-surface border border-border-default shadow-lg p-2">
+                      {link.children?.map((subLink) => (
+                        <Link
+                          key={subLink.label}
+                          href={subLink.href}
+                          className="block px-4 py-2.5 text-sm font-medium text-black/80 rounded-lg hover:bg-bg-subtle hover:text-black transition-all duration-150"
+                        >
+                          {subLink.label}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
@@ -110,7 +112,7 @@ export function Navbar() {
 
         {/* CTA CONTACT */}
         <div className="hidden lg:block">
-          <Button href={contactUsLink.href} variant="primary" size="md">
+          <Button href={contactUsLink.href} variant="primary" size="md" target="_blank">
             {contactUsLink.label}
           </Button>
         </div>
@@ -149,28 +151,28 @@ export function Navbar() {
         <div className="flex-1 overflow-y-auto px-6 py-8 flex flex-col gap-6">
           <nav className="flex flex-col gap-5">
             {navigationLinks.map((link) => {
-              const hasChildren = link.children && link.children.length > 0;
+              const hasChildren = false; // Temporarily disabled dropdown (originally: link.children && link.children.length > 0)
               return (
                 <div key={link.label} className="border-b border-border-default pb-4">
-                  <a
+                  <Link
                     href={link.href}
                     onClick={handleMobileLinkClick}
                     className="text-base font-semibold text-text-primary hover:text-text-brand"
                   >
                     {link.label}
-                  </a>
+                  </Link>
 
                   {hasChildren && (
                     <div className="mt-3 pl-4 flex flex-col gap-2.5 border-l-2 border-border-accent">
                       {link.children?.map((subLink) => (
-                        <a
+                        <Link
                           key={subLink.label}
                           href={subLink.href}
                           onClick={handleMobileLinkClick}
                           className="text-sm font-medium text-text-secondary hover:text-text-primary"
                         >
                           {subLink.label}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   )}
@@ -186,6 +188,7 @@ export function Navbar() {
               size="lg"
               className="w-full"
               onClick={handleMobileLinkClick}
+              target="_blank"
             >
               {contactUsLink.label}
             </Button>

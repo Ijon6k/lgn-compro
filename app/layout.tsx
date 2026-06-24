@@ -15,12 +15,12 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://lgn.co.id"),
   title: {
     template: "%s | Langit Global Nusantara",
-    default: "Langit Global Nusantara (LGN) | Autonomous Systems & Mission-Ready Solutions",
+    default: "Langit Global Nusantara (LGN) | Autonomous Systems, UAV & Robotics Solutions",
   },
-  description: "LGN (Langit Global Nusantara) delivers integrated autonomous systems, robotics, AI, and mission-critical engineering solutions for government and industrial operations across air, land, and sea.",
+  description: "Langit Global Nusantara (LGN) delivers autonomous systems, UAV platforms, robotics, AI-enabled technologies, and mission-critical engineering solutions for government, industrial, maritime, and public safety operations across Indonesia.",
   openGraph: {
-    title: "Langit Global Nusantara (LGN)",
-    description: "LGN delivers integrated autonomous systems, robotics, AI, and mission-critical engineering solutions across air, land, and sea.",
+    title: "Langit Global Nusantara (LGN) | Autonomous Systems, UAV & Robotics Solutions",
+    description: "Langit Global Nusantara (LGN) delivers autonomous systems, UAV platforms, robotics, AI-enabled technologies, and mission-critical engineering solutions for government, industrial, maritime, and public safety operations across Indonesia.",
     url: "https://lgn.co.id",
     siteName: "Langit Global Nusantara",
     locale: "id_ID",
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Langit Global Nusantara (LGN)",
-    description: "LGN delivers integrated autonomous systems, robotics, AI, and mission-critical engineering solutions across air, land, and sea.",
+    title: "Langit Global Nusantara (LGN) | Autonomous Systems, UAV & Robotics Solutions",
+    description: "Langit Global Nusantara (LGN) delivers autonomous systems, UAV platforms, robotics, AI-enabled technologies, and mission-critical engineering solutions for government, industrial, maritime, and public safety operations across Indonesia.",
   },
   robots: {
     index: true,
