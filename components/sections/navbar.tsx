@@ -6,7 +6,7 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { navigationLinks, contactUsLink } from "@/data/navigation";
 import { cn } from "@/lib/utils";
-
+import { ENABLE_DROPDOWN } from "@/constants";
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -47,7 +47,7 @@ export function Navbar() {
         {/* DESKTOP NAVIGATION */}
         <nav className="hidden lg:flex items-center gap-1">
           {navigationLinks.map((link) => {
-            const hasChildren = link.children && link.children.length > 0;
+            const hasChildren = ENABLE_DROPDOWN && link.children && link.children.length > 0;
             return (
               <div
                 key={link.label}
@@ -151,7 +151,7 @@ export function Navbar() {
         <div className="flex-1 overflow-y-auto px-6 py-8 flex flex-col gap-6">
           <nav className="flex flex-col gap-5">
             {navigationLinks.map((link) => {
-              const hasChildren = link.children && link.children.length > 0;
+              const hasChildren = ENABLE_DROPDOWN && link.children && link.children.length > 0;
               return (
                 <div key={link.label} className="border-b border-border-default pb-4">
                   <Link
