@@ -68,7 +68,7 @@ export function IndustriesList() {
                 )}
 
                 {industry.ctaText && (
-                  <Button href={industry.ctaHref || "#contact"} variant="outline" size="lg">
+                  <Button href={industry.ctaHref || "#contact"} variant="secondary" size="lg">
                     {industry.ctaText}
                   </Button>
                 )}
