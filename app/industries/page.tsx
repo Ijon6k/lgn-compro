@@ -22,17 +22,17 @@ export default function IndustriesPage() {
               fill
               priority
               sizes="100vw"
-              className="object-cover object-center scale-105 animate-subtle-zoom"
+              className="object-cover object-center scale-105"
             />
             <div className="absolute inset-0 bg-black/30"></div>
           </div>
 
           <Container className="relative z-10 mt-16 lg:mt-24">
             <div className="max-w-[789px] flex flex-col items-start gap-6 lg:gap-8">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-normal leading-[1.25] text-white tracking-tight uppercase animate-fade-in-up-1">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-normal leading-[1.25] text-white tracking-tight uppercase">
                 DRIVING INNOVATION ACROSS CRITICAL INDUSTRIES
               </h1>
-              <p className="text-lg sm:text-2xl font-normal text-white/90 leading-[1.5] animate-fade-in-up-2">
+              <p className="text-lg sm:text-2xl font-normal text-white/90 leading-[1.5]">
                 Advanced UAV, robotics, and autonomous solutions designed to enhance operational efficiency, infrastructure management, public safety, and environmental sustainability across industrial and government sectors.
               </p>
             </div>

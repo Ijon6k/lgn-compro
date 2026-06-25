@@ -14,20 +14,20 @@ export function AboutJumbotron() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center scale-105 animate-subtle-zoom"
+          className="object-cover object-center scale-105"
         />
         <div className="absolute inset-0 bg-black/50"></div>
       </div>
 
       <Container className="relative z-10">
         <div className="max-w-3xl flex flex-col items-start gap-6 lg:gap-8">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-medium leading-[1.25] text-white tracking-tight uppercase animate-fade-in-up-1">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-medium leading-[1.25] text-white tracking-tight uppercase">
             ENGINEERING THE FUTURE OF AUTONOMOUS SOLUTION
           </h1>
-          <p className="text-base sm:text-lg lg:text-xl font-normal text-white/90 leading-relaxed animate-fade-in-up-2">
+          <p className="text-base sm:text-lg lg:text-xl font-normal text-white/90 leading-relaxed">
             LGN delivers integrated autonomous technologies across air, land, and sea, combining intelligent hardware, software, and AI systems to solve complex operational challenges for government agencies, enterprises, and industrial sectors.
           </p>
-          
+
           <div className="flex flex-wrap items-center gap-4 mt-4 animate-fade-in-up-3">
             <Button
               href="#who-we-are"
