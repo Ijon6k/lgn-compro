@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter_Tight } from "next/font/google";
+import "@flaticon/flaticon-uicons/css/all/all.css";
 import "./globals.css";
 
 // 1. TYPOGRAPHY SYSTEM: Load Inter Tight font from next/font/google

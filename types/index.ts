@@ -20,6 +20,16 @@ export interface SolutionItem {
   isDark?: boolean;
 }
 
+export interface IndustryItem {
+  id: string;
+  title: string;
+  description: string;
+  imageUrl: string;
+  features?: string[];
+  ctaText?: string;
+  ctaHref?: string;
+}
+
 export interface FooterLink {
   label: string;
   href: string;

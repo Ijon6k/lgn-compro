@@ -1,8 +1,8 @@
 import { NavLink } from "@/types";
 
 export const navigationLinks: NavLink[] = [
-  { label: "Home", href: "/#home" },
-  { label: "About Us", href: "/#about" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
   {
     label: "Solution",
     href: "/solutions",
@@ -15,13 +15,13 @@ export const navigationLinks: NavLink[] = [
   },
   {
     label: "Industries",
-    href: "/#industries",
+    href: "/industries",
     children: [
-      { label: "Agriculture & Marine", href: "/#ind-agri-marine" },
-      { label: "Construction & Logistic", href: "/#ind-construction-logistic" },
-      { label: "Energy & Mining", href: "/#ind-energy-mining" },
-      { label: "Government & Defense", href: "/#ind-gov-defense" },
-      { label: "Public Safety", href: "/#ind-public-safety" },
+      { label: "Agriculture & Marine", href: "/industries#use-cases" },
+      { label: "Construction & Logistic", href: "/industries#use-cases" },
+      { label: "Energy & Mining", href: "/industries#use-cases" },
+      { label: "Government & Defense", href: "/industries#use-cases" },
+      { label: "Public Safety", href: "/industries#use-cases" },
     ],
   },
 ];
