@@ -13,7 +13,7 @@ interface ProductCarouselProps {
 export function ProductCarousel({ products }: ProductCarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
-    containScroll: "keepSnaps",
+    containScroll: "trimSnaps",
     loop: false, // Do not infinitely loop
   });
 

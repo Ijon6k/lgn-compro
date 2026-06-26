@@ -45,7 +45,8 @@ export function TechnologyPortfolio() {
             return (
               <div
                 key={domain.id}
-                className={`transition-all duration-1000 ease-out transform ${delayClass} ${
+                id={domain.title.toLowerCase().replace(" & ", "-").replace(" domain", "")}
+                className={`scroll-mt-32 transition-all duration-1000 ease-out transform ${delayClass} ${
                   isRevealed ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
                 }`}
               >

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { footerColumns, footerContactInfo } from "@/data/footer";
 import { cn } from "@/lib/utils";
@@ -19,25 +20,40 @@ export function Footer() {
             <div className="flex flex-col gap-5 sm:gap-8">
               {footerContactInfo.map((item) => {
                 const isLink = item.href && item.href !== "";
-                const Component = isLink ? "a" : "div";
-                return (
-                  <Component
-                    key={item.label}
-                    {...(isLink ? {
-                      href: item.href,
-                      target: item.href.startsWith("http") ? "_blank" : undefined,
-                      rel: item.href.startsWith("http") ? "noopener noreferrer" : undefined,
-                    } : {})}
-                    className={cn(
-                      "flex items-center gap-3 sm:gap-4 text-sm sm:text-xl font-normal text-[var(--pr-bg-500)] rounded",
-                      isLink ? "hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary" : "cursor-default"
-                    )}
-                  >
+                const className = cn(
+                  "flex items-center gap-3 sm:gap-4 text-sm sm:text-xl font-normal text-[var(--pr-bg-500)] rounded",
+                  isLink ? "hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary" : "cursor-default"
+                );
+                
+                const inner = (
+                  <>
                     <i className={`${item.icon} text-lg sm:text-2xl leading-none flex-shrink-0 text-brand-primary`} />
                     <span>
                       {item.label}: {item.value}
                     </span>
-                  </Component>
+                  </>
+                );
+
+                if (isLink) {
+                  const isExternal = item.href.startsWith("http");
+                  if (isExternal) {
+                    return (
+                      <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer" className={className}>
+                        {inner}
+                      </a>
+                    );
+                  }
+                  return (
+                    <Link key={item.label} href={item.href} className={className}>
+                      {inner}
+                    </Link>
+                  );
+                }
+
+                return (
+                  <div key={item.label} className={className}>
+                    {inner}
+                  </div>
                 );
               })}
             </div>
@@ -54,22 +70,34 @@ export function Footer() {
                 <ul className="flex flex-col gap-4 sm:gap-8">
                   {col.links.map((link) => {
                     const isLink = link.href && link.href !== "";
-                    const Component = isLink ? "a" : "span";
+                    const className = cn(
+                      "text-sm sm:text-xl font-normal text-[var(--pr-bg-500)]",
+                      isLink ? "hover:opacity-80 transition-opacity duration-150" : "opacity-80 cursor-default"
+                    );
+
+                    let content;
+                    if (isLink) {
+                      const isExternal = link.href.startsWith("http");
+                      if (isExternal) {
+                        content = (
+                          <a href={link.href} target="_blank" rel="noopener noreferrer" className={className}>
+                            {link.label}
+                          </a>
+                        );
+                      } else {
+                        content = (
+                          <Link href={link.href} className={className}>
+                            {link.label}
+                          </Link>
+                        );
+                      }
+                    } else {
+                      content = <span className={className}>{link.label}</span>;
+                    }
+
                     return (
                       <li key={link.label}>
-                        <Component
-                          {...(isLink ? {
-                            href: link.href,
-                            target: link.href.startsWith("http") ? "_blank" : undefined,
-                            rel: link.href.startsWith("http") ? "noopener noreferrer" : undefined,
-                          } : {})}
-                          className={cn(
-                            "text-sm sm:text-xl font-normal text-[var(--pr-bg-500)]",
-                            isLink ? "hover:opacity-80 transition-opacity duration-150" : "opacity-80 cursor-default"
-                          )}
-                        >
-                          {link.label}
-                        </Component>
+                        {content}
                       </li>
                     );
                   })}

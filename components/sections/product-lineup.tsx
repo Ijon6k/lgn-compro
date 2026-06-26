@@ -11,7 +11,7 @@ export function ProductLineup() {
   const { ref, isRevealed } = useScrollReveal(0.05);
 
   return (
-    <section ref={ref} id="product-lineup" className="relative py-24 lg:py-32 overflow-hidden bg-bg-dark text-text-inverse">
+    <section ref={ref} id="product-lineup" className="relative py-24 lg:py-32 overflow-hidden bg-bg-dark text-text-inverse scroll-mt-32">
       {/* 1. Background Image */}
       <div className="absolute inset-0 z-0">
         {/* TODO: Replace with actual LGN background image */}

@@ -34,11 +34,11 @@ export const footerColumns: FooterColumn[] = [
   {
     title: "INDUSTRIES",
     links: [
-      { label: "Agriculture & Marine", href: "/#ind-agri-marine" },
-      { label: "Construction & Logistic", href: "/#ind-construction-logistic" },
-      { label: "Energy & Mining", href: "/#ind-energy-mining" },
-      { label: "Government & Defense", href: "/#ind-gov-defense" },
-      { label: "Public Safety", href: "/#ind-public-safety" },
+      { label: "Agriculture & Marine", href: "/industries#ind-agri-marine" },
+      { label: "Construction & Logistic", href: "/industries#ind-construction-logistic" },
+      { label: "Energy & Mining", href: "/industries#ind-energy-mining" },
+      { label: "Government & Defense", href: "/industries#ind-gov-defense" },
+      { label: "Public Safety", href: "/industries#ind-public-safety" },
     ],
   },
   {

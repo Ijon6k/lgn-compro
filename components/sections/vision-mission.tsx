@@ -44,7 +44,7 @@ export function VisionMission() {
             </p>
             {/* Decorative Icon Background */}
             <div className="absolute -bottom-8 -right-8 opacity-100 pointer-events-none transition-transform duration-500 group-hover:scale-110">
-              <Image src="/5.png" alt="Decorative Icon" width={160} height={160} />
+              <Image src="/icon.svg" alt="Decorative Icon" width={260} height={260} className="translate-y-[80px] -translate-x-[10px]" />
             </div>
           </div>
 

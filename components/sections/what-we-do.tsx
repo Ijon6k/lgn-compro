@@ -10,7 +10,7 @@ import { whatWeDoData } from "@/constants";
 export function WhatWeDo() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
-    containScroll: "keepSnaps",
+    containScroll: "trimSnaps",
     loop: false,
   });
 
@@ -98,6 +98,7 @@ export function WhatWeDo() {
           >
             <i className="fi fi-rr-angle-left text-lg sm:text-xl font-bold flex items-center justify-center" />
           </button>
+          
           <button
             onClick={scrollNext}
             disabled={nextBtnDisabled}

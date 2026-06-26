@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
@@ -10,6 +10,26 @@ import { cn } from "@/lib/utils";
 
 export function IndustriesTabs() {
   const [activeTab, setActiveTab] = useState(industriesData[0].id);
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace("#", "");
+      if (hash && industriesData.some((ind) => ind.id === hash)) {
+        setActiveTab(hash);
+        const el = document.getElementById("use-cases");
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    };
+
+    // Run on initial load
+    handleHashChange();
+
+    // Listen for hash changes
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
 
   const activeIndustry = industriesData.find((ind) => ind.id === activeTab) || industriesData[0];
 

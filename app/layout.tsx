@@ -65,8 +65,9 @@ export default function RootLayout({
     <html 
       lang="id" 
       className={`${interTight.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-bg-canvas text-text-primary">
+      <body className="min-h-full flex flex-col bg-bg-canvas text-text-primary" suppressHydrationWarning>
         {children}
       </body>
     </html>
