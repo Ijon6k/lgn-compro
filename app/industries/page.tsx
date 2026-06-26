@@ -6,7 +6,7 @@ import { IndustriesCta } from "@/components/sections/industries-cta";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import industriesJumbotron from "@/public/photos/industriesJumbotron.webp";
+import heroIndustries from "@/public/photos/industries/heroindustries.webp";
 
 export default function IndustriesPage() {
   return (
@@ -14,27 +14,47 @@ export default function IndustriesPage() {
       <Navbar />
       <main className="flex-1 w-full">
         {/* JUMBOTRON HERO */}
-        <section className="relative min-h-[calc(100vh-84px)] flex items-center justify-start overflow-hidden py-16 lg:py-24">
+        <section className="relative min-h-[calc(100vh-84px)] flex items-end justify-start overflow-hidden pb-16 lg:pb-24 pt-28 lg:pt-36">
           <div className="absolute inset-0 z-0">
             <Image
-              src={industriesJumbotron}
+              src={heroIndustries}
               alt="Industries Hero Image"
               fill
               priority
               sizes="100vw"
               className="object-cover object-center scale-105"
             />
-            <div className="absolute inset-0 bg-black/30"></div>
+            <div className="absolute inset-0 bg-black/25"></div>
           </div>
 
-          <Container className="relative z-10 mt-16 lg:mt-24">
-            <div className="max-w-[789px] flex flex-col items-start gap-6 lg:gap-8">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-normal leading-[1.25] text-white tracking-tight uppercase">
+          <Container className="relative z-10">
+            <div className="max-w-[789px] flex flex-col items-start gap-2 ">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-normal leading-[1.25] text-white tracking-tight uppercase animate-fade-in-up-1">
                 DRIVING INNOVATION ACROSS CRITICAL INDUSTRIES
               </h1>
-              <p className="text-lg sm:text-2xl font-normal text-white/90 leading-[1.5]">
+              <p className="text-lg sm:text-2xl font-normal text-white/90 leading-[1.5] animate-fade-in-up-2">
                 Advanced UAV, robotics, and autonomous solutions designed to enhance operational efficiency, infrastructure management, public safety, and environmental sustainability across industrial and government sectors.
               </p>
+
+              <div className="flex flex-wrap items-center gap-4 mt-2 animate-fade-in-up-3">
+                <Button
+                  href="#use-cases"
+                  variant="primary"
+                  className="!rounded-full !bg-[#A68164] !border-none hover:!bg-[#8E6D54] !text-white px-8 py-3"
+                  icon={<i className="fi fi-rr-info flex items-center justify-center text-sm"></i>}
+                >
+                  Learn More
+                </Button>
+                <Button
+                  href="https://wa.me/628211818566"
+                  target="_blank"
+                  variant="secondary"
+                  className="!rounded-full !bg-transparent !border !border-white/60 !text-white hover:!bg-white/10 hover:!border-white px-8 py-3 [&_span]:!text-white"
+                  icon={<Image src="/Union.svg" alt="Contact Icon" width={18} height={18} />}
+                >
+                  Request Consultation
+                </Button>
+              </div>
             </div>
           </Container>
         </section>
@@ -49,7 +69,7 @@ export default function IndustriesPage() {
                 {/* Image 1 (Left, taller, shifted up slightly) */}
                 <div className="relative w-1/2 aspect-[222/465] transform -translate-y-8 lg:-translate-y-12 shadow-xl animate-fade-in-up-1">
                   <Image
-                    src="/photos/industries/Frame 1261157769.webp"
+                    src="/photos/industries/industires1.webp"
                     alt="Drone Operator"
                     fill
                     sizes="(max-width: 1024px) 50vw, 25vw"
@@ -59,7 +79,7 @@ export default function IndustriesPage() {
                 {/* Image 2 (Right, shifted down slightly) */}
                 <div className="relative w-1/2 aspect-[222/465] transform translate-y-8 lg:translate-y-12 shadow-xl animate-fade-in-up-2">
                   <Image
-                    src="/photos/industries/Frame 1261157770.webp"
+                    src="/photos/industries/industries2.webp"
                     alt="Discussion"
                     fill
                     sizes="(max-width: 1024px) 50vw, 25vw"

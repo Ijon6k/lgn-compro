@@ -2,19 +2,28 @@
 
 import React, { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import Image from "next/image";
 import { ProductCard } from "@/components/ui/product-card";
-import { Product } from "@/data/products";
 import { cn } from "@/lib/utils";
 
-interface ProductCarouselProps {
-  products: Product[];
+export interface CarouselItem {
+  id: string;
+  title: string;
+  image: string;
+  description?: string;
+  href?: string;
 }
 
-export function ProductCarousel({ products }: ProductCarouselProps) {
+interface ProductCarouselProps {
+  products: CarouselItem[];
+  variant?: "solution" | "about-us";
+}
+
+export function ProductCarousel({ products, variant = "solution" }: ProductCarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
     containScroll: "trimSnaps",
-    loop: false, // Do not infinitely loop
+    loop: false,
   });
 
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
@@ -46,17 +55,42 @@ export function ProductCarousel({ products }: ProductCarouselProps) {
       {/* 1. Carousel Viewport */}
       <div className="overflow-hidden w-full" ref={emblaRef}>
         <div className="flex -ml-4 sm:-ml-6 lg:-ml-8">
-          {products.map((product) => (
+          {products.map((item) => (
             <div
-              key={product.id}
+              key={item.id}
               className="min-w-0 flex-[0_0_100%] pl-4 sm:flex-[0_0_50%] sm:pl-6 lg:flex-[0_0_33.333333%] lg:pl-8"
             >
-              <ProductCard
-                id={product.id}
-                title={product.title}
-                image={product.image}
-                href={product.href}
-              />
+              {variant === "about-us" ? (
+                <div
+                  className="relative w-full rounded-xl overflow-hidden shadow-lg group"
+                  style={{ aspectRatio: "348/441" }}
+                >
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    draggable={false}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 flex flex-col items-start text-left z-10 pointer-events-none">
+                    <h4 className="text-2xl font-medium text-white mb-2">
+                      {item.title}
+                    </h4>
+                    <p className="text-xl font-normal text-white/90 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              ) : (
+                <ProductCard
+                  id={item.id}
+                  title={item.title}
+                  image={item.image}
+                  href={item.href || "#"}
+                />
+              )}
             </div>
           ))}
         </div>
