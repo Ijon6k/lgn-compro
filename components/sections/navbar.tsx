@@ -157,7 +157,7 @@ export function Navbar() {
                   <Link
                     href={link.href}
                     onClick={handleMobileLinkClick}
-                    className="text-base font-semibold text-text-primary hover:text-text-brand"
+                    className="text-base font-medium text-text-primary hover:text-text-brand"
                   >
                     {link.label}
                   </Link>
