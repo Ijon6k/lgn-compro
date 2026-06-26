@@ -5,27 +5,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
-
-const whatWeDoData = [
-  {
-    id: "tech-distribution",
-    title: "Technology Distribution",
-    description: "UAV, drone, ROV, UGV, and mission equipment supply.",
-    image: "/photos/industries/Frame 1261157769.webp", // Placeholder
-  },
-  {
-    id: "sys-integration",
-    title: "System Integration",
-    description: "Drone, sensor, AI, and mission system integration.",
-    image: "/photos/industries/Frame 1261157770.webp", // Placeholder
-  },
-  {
-    id: "prof-services",
-    title: "Professional Services",
-    description: "Field deployment and unmanned mission support.",
-    image: "/photos/industries/Frame 1261157654.webp", // Placeholder
-  },
-];
+import { whatWeDoData } from "@/constants";
 
 export function WhatWeDo() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -75,14 +55,14 @@ export function WhatWeDo() {
         </div>
 
         {/* CAROUSEL */}
-        <div className="relative w-full max-w-5xl mx-auto">
+        <div className="relative w-full max-w-6xl mx-auto mt-4">
           {/* Carousel Viewport */}
           <div className="overflow-hidden w-full" ref={emblaRef}>
             <div className="flex -ml-4 sm:-ml-6 lg:-ml-8">
               {whatWeDoData.map((item) => (
                 <div
                   key={item.id}
-                  className="min-w-0 flex-[0_0_100%] pl-4 sm:flex-[0_0_50%] sm:pl-6 lg:flex-[0_0_33.333333%] lg:pl-8"
+                  className="min-w-0 flex-[0_0_100%] pl-4 sm:flex-[0_0_50%] sm:pl-6 lg:flex-[0_0_40%] lg:pl-8"
                 >
                   <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden shadow-lg group">
                     <Image
@@ -90,14 +70,14 @@ export function WhatWeDo() {
                       alt={item.title}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
-                    <div className="absolute bottom-0 left-0 right-0 p-6 flex flex-col items-start text-left">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 flex flex-col items-start text-left z-10 pointer-events-none">
                       <h4 className="text-lg lg:text-xl font-medium text-white mb-2">
                         {item.title}
                       </h4>
-                      <p className="text-sm text-white/80 leading-relaxed">
+                      <p className="text-sm text-white/90 leading-relaxed">
                         {item.description}
                       </p>
                     </div>
@@ -112,21 +92,21 @@ export function WhatWeDo() {
             onClick={scrollPrev}
             disabled={prevBtnDisabled}
             className={cn(
-              "absolute left-0 -translate-x-4 sm:-translate-x-1/2 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-[#A68164]/90 hover:bg-[#8E6D54] flex items-center justify-center text-white shadow-md transition-all duration-300 focus-visible:outline-none disabled:opacity-0 cursor-pointer"
+              "absolute left-0 -translate-x-1/2 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-brand-primary hover:bg-brand-primary-hover active:scale-[0.95] flex items-center justify-center text-white shadow-md transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white disabled:opacity-0 disabled:pointer-events-none cursor-pointer"
             )}
             aria-label="Previous"
           >
-            <i className="fi fi-rr-angle-left text-sm" />
+            <i className="fi fi-rr-angle-left text-lg sm:text-xl font-bold flex items-center justify-center" />
           </button>
           <button
             onClick={scrollNext}
             disabled={nextBtnDisabled}
             className={cn(
-              "absolute right-0 translate-x-4 sm:translate-x-1/2 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-[#A68164]/90 hover:bg-[#8E6D54] flex items-center justify-center text-white shadow-md transition-all duration-300 focus-visible:outline-none disabled:opacity-0 cursor-pointer"
+              "absolute right-0 translate-x-1/2 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-brand-primary hover:bg-brand-primary-hover active:scale-[0.95] flex items-center justify-center text-white shadow-md transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white disabled:opacity-0 disabled:pointer-events-none cursor-pointer"
             )}
             aria-label="Next"
           >
-            <i className="fi fi-rr-angle-right text-sm" />
+            <i className="fi fi-rr-angle-right text-lg sm:text-xl font-bold flex items-center justify-center" />
           </button>
         </div>
       </Container>
