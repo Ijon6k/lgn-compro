@@ -33,7 +33,7 @@ export function AboutJumbotron() {
               href="#who-we-are"
               variant="primary"
               className="!rounded-full !bg-[#A68164] !border-none hover:!bg-[#8E6D54] !text-white px-8 py-3"
-              icon={<i className="fi fi-rr-arrow-right -translate-y-[1px]"></i>}
+              icon={<i className="fi fi-rr-arrow-right translate-y-[2.5px]"></i>}
             >
               Learn More
             </Button>

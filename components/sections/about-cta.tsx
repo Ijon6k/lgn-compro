@@ -40,7 +40,7 @@ export function AboutCta() {
                   href="/industries#use-cases"
                   variant="primary"
                   className="!bg-[#A68164] !border-none hover:!bg-[#8E6D54] !text-white px-6 py-2.5 !rounded-sm"
-                  icon={<i className="fi fi-rr-info -translate-y-[1px] text-sm"></i>}
+                  icon={<i className="fi fi-rr-info translate-y-[2.5px] text-sm"></i>}
                 >
                   Learn Use Case
                 </Button>
