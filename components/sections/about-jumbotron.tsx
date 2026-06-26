@@ -16,7 +16,7 @@ export function AboutJumbotron() {
           sizes="100vw"
           className="object-cover object-center scale-105"
         />
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0"></div>
       </div>
 
       <Container className="relative z-10">
