@@ -28,29 +28,29 @@ export const industriesData: IndustryItem[] = [
     ctaHref: "#contact",
   },
   {
-    id: "ind-energy-mining",
-    title: "Energy & Mining",
-    description: "Safeguard critical infrastructure with advanced inspection drones that operate flawlessly in extreme conditions and high-risk zones.",
-    imageUrl: "/photos/industries/Frame 1261157654 (2).webp",
-    features: [
-      "Offshore rig and pipeline automated inspections",
-      "Thermal imaging for solar and wind farms",
-      "Underground mining exploration robotics",
-    ],
-    ctaText: "Explore Energy",
-    ctaHref: "#contact",
-  },
-  {
     id: "ind-gov-defense",
     title: "Government & Defense",
     description: "Deploy mission-critical, highly secure autonomous systems tailored for tactical superiority, border patrol, and intelligence gathering.",
-    imageUrl: "/photos/industries/Frame 1261157654 (3).webp",
+    imageUrl: "/photos/industries/Frame 1261157654 (2).webp",
     features: [
       "Encrypted communications and anti-jamming tech",
       "Long-endurance ISR (Intelligence, Surveillance, Reconnaissance)",
       "Swarm robotics for tactical deployment",
     ],
     ctaText: "Explore Defense",
+    ctaHref: "#contact",
+  },
+  {
+    id: "ind-energy-mining",
+    title: "Energy & Mining",
+    description: "Safeguard critical infrastructure with advanced inspection drones that operate flawlessly in extreme conditions and high-risk zones.",
+    imageUrl: "/photos/industries/Frame 1261157654 (3).webp",
+    features: [
+      "Offshore rig and pipeline automated inspections",
+      "Thermal imaging for solar and wind farms",
+      "Underground mining exploration robotics",
+    ],
+    ctaText: "Explore Energy",
     ctaHref: "#contact",
   },
   {
