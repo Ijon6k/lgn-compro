@@ -10,7 +10,7 @@ export const footerContactInfo: ContactItem[] = [
   {
     icon: "fi fi-rr-envelope",
     label: "Inquiries",
-    value: "hello@lgn.id",
+    value: "headoffice@langitnusantara.id",
     href: "",
   },
   {
