@@ -62,15 +62,15 @@ export function WhatWeDo() {
               {whatWeDoData.map((item) => (
                 <div
                   key={item.id}
-                  className="min-w-0 flex-[0_0_100%] pl-4 sm:flex-[0_0_50%] sm:pl-6 lg:flex-[0_0_40%] lg:pl-8"
+                  className="min-w-0 flex-[0_0_100%] pl-4 sm:flex-[0_0_50%] sm:pl-6 lg:flex-[0_0_33.333333%] lg:pl-8"
                 >
-                  <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden shadow-lg group">
+                  <div className="relative w-full aspect-square rounded-xl overflow-hidden shadow-lg group">
                     <Image
                       src={item.image}
                       alt={item.title}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none"></div>
                     <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 flex flex-col items-start text-left z-10 pointer-events-none">
