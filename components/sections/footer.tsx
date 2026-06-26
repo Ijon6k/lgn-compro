@@ -36,9 +36,17 @@ export function Footer() {
 
                 if (isLink) {
                   const isExternal = item.href.startsWith("http");
+                  const isMailOrTel = item.href.startsWith("mailto:") || item.href.startsWith("tel:");
                   if (isExternal) {
                     return (
                       <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer" className={className}>
+                        {inner}
+                      </a>
+                    );
+                  }
+                  if (isMailOrTel) {
+                    return (
+                      <a key={item.label} href={item.href} className={className}>
                         {inner}
                       </a>
                     );
